@@ -252,7 +252,8 @@ determine_eligibility_group <- function(months_elapsed, eltv, oltv, equity_boost
       )
     ))
   }
-
+print(paste("oltv:", oltv))
+print(paste("months_elapsed:", months_elapsed))
   # 4. Auto-cancellation conditions
   if (oltv <= 0.78 || months_elapsed >= 180) {
     return(list(
