@@ -28,12 +28,12 @@ state_abbr_to_name <- c(
 )
 
 # Load data at API start
-hpi <- fread("C:/Users/maggi/unnecessary-pmi-app/pmi-api/fmhpi_master_file.csv")
-zip_state <- fread("C:/Users/maggi/unnecessary-pmi-app/pmi-api/zip_to_state_2017.csv")
-zip_cbsa <- readxl::read_excel("C:/Users/maggi/unnecessary-pmi-app/pmi-api/ZIP_CBSA_122018.xlsx")
+hpi <- fread("C:/Users/maggi/pmi-cancellation-api/fmhpi_master_file.csv")
+zip_state <- fread("C:/Users/maggi/pmi-cancellation-api/zip_to_state_2017.csv")
+zip_cbsa <- readxl::read_excel("C:/Users/maggi/pmi-cancellation-api/ZIP_CBSA_122018.xlsx")
 hpi$cbsa_code <- as.character(hpi$GEO_Code)
 
-fred_rates <- fread("C:/Users/maggi/unnecessary-pmi-app/pmi-api/MORTGAGE30US.csv")
+fred_rates <- fread("C:/Users/maggi/pmi-cancellation-api/MORTGAGE30US.csv")
 setnames(fred_rates, "observation_date", "DATE")
 fred_rates[, DATE := as.Date(DATE)]
 fred_rates[, Year := year(DATE)]
