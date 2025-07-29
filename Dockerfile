@@ -1,5 +1,5 @@
 # Use the official Plumber image
-FROM rstudio/plumber:1.2.0
+FROM rstudio/plumber:v1.0.0
 
 # Set the working directory inside the container
 WORKDIR /app
